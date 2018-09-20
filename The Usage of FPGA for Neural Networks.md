@@ -18,6 +18,9 @@ A FPGA can be used to solve any problem which is computable. Their advantage lie
 
 FPGAs are commonly used in hardware acceleration, where one can use FPGA to accelerate certain parts of an algorithm and share part of the computation between the FPGA and a generic processor.
 
+[TODO] 
+https://www.zdnet.com/article/ai-chips-for-big-data-and-machine-learning-gpus-fpgas-and-hard-choices-in-the-cloud-and-on-premise/
+
 ### Advantages
 
 1. FPGAs provide a combination of programmability and performance comparing to ASIC and CPU/GPU. 
@@ -51,14 +54,16 @@ FPGAs are commonly used in hardware acceleration, where one can use FPGA to acce
 
 3. Low precision computing
 
-Quatization is a simple and efficient approach to accelerating inference and a sophisticatedly designed quantization method does not damage prediction accuracy of neural networks. Some frequently-used quantization methods, such as fixed-point quantization and low-precision floating point, can be easily implemented in FPGA, making quantization and de-quantization process, along with low-precision numbers' arithmetics faster.
+    Quatization is a simple and efficient approach to accelerating inference and a sophisticatedly designed quantization method does not damage prediction accuracy of neural networks. Some frequently-used quantization methods, such as fixed-point quantization and low-precision floating point, can be easily implemented in FPGA, making quantization and de-quantization process, along with low-precision numbers' arithmetics faster.
 
 4. Application-specific architecture
 
-There are several aspects of computer arithmetic that need to be considered in the design of neurocomputers; these include data representation, inner-product computation, implementation of activation functions, storage and update of weights, and the nature of learning algorithms.
+    There are several aspects of computer arithmetic that need to be considered in the design of neurocomputers; these include data representation, inner-product computation, implementation of activation functions, storage and update of weights, and the nature of learning algorithms.
 
 
 5. Domain-specific language(???)/ISA.
+
+6. FPGA-specific neural network model
 
 
 
@@ -84,18 +89,62 @@ The processing is done by six BrainChip Accelerator cores in a Xilinx Kintex Ult
 
 [TODO] The architecture of BrainChip, or is it closed source?
 
-2. Microsoft's BrainWave project (aml-real-time-ai)
+2. Microsoft's [BrainWave](https://www.microsoft.com/en-us/research/uploads/prod/2018/03/mi0218_Chung-2018Mar25.pdf) project ([aml-real-time-ai]((https://github.com/Azure/aml-real-time-ai)))
+
+https://www.top500.org/news/microsoft-launches-fpga-powered-machine-learning-for-azure-customers/
+
+
+3. Baidu's [SDA](https://www.hotchips.org/wp-content/uploads/hc_archives/hc26/HC26-12-day2-epub/HC26.12-5-FPGAs-epub/HC26.12.545-Soft-Def-Acc-Ouyang-baidu-v3--baidu-v4.pdf): Software-Defined Accelerator for Large-Scale DNN Systems
+
+* Software-defined
+    - Reconfigure active functions by user-space API
+    - Support very fast iteration of internet services
+* Combine small requests to big one
+    - Improve the QPS while batch size is small
+    - The batch size of real workload is small
+* CUBLAS-compatiable APIs
+* Performance
+    - Provide higher performance in the DNN prediction system than GPU and CPU server
+    - Leverage mid-end FPGA to achieve about 380Gflops
+    - 10~20W power in real production system
+* Can be deployed in any types of servers
+* Demonstrate that FPGA is a good choice for large-scale DNN systems
+
+4. Xilinx's [XDNN](https://www.nextplatform.com/2018/08/27/xilinx-unveils-xdnn-fpga-architecture-for-ai-inference/) FPGA Architecture for AI Inference
+
+https://www.nextplatform.com/2018/07/18/fpga-maker-snaps-up-deep-learning-chip-startup/
+
+5. Alibaba
+
+https://www.computerweekly.com/blog/Eyes-on-APAC/An-inside-look-at-Alibabas-deep-learning-processor
+
+6. Intel (?)
+
+[Intel FPGAS Powering Real-Time AI Inferencing](https://ai.intel.com/intel-fpgas-powering-real-time-ai-inferencing/?utm_campaign=2018-Q3-US-AI-Always-On-IntelAI_FB&utm_source=facebook&utm_medium=social&utm_content=157_Static_DMT_CSTM&utm_keyword=read-more&cid=2018-Q3-US-AI-Always-On-IntelAI_FB&spredfast-trk-id=sf195620923)
+
+https://www.nextplatform.com/2018/07/31/intel-fpga-architecture-focuses-on-deep-learning-inference/
+
+### Other AI accelerator (ASIC)
 
 ## Acdemia
 
 [TODO] related papers
 
+1. [A Genral Neural Network Hardware Architecture on FPGA](https://arxiv.org/ftp/arxiv/papers/1711/1711.05860.pdf)
+
+2. [DLAU](https://arxiv.org/pdf/1605.06894.pdf): A Scalable Deep Learning Accelerator Unit on FPGA
+
+[LeCun'09] [Farabet'10] [Aysegui'13] [Gokhale'15] [Zhang'15], etc. 
+
+http://cadlab.cs.ucla.edu/~cong/slides/HALO15_keynote.pdf
+
 ## Conclusion
 
-[TODO]
+[TODO] What? Why? How? Exsiting projects.
 
 
 ## Reference
 1. [FPGA introduction on Wikipedia](https://en.wikipedia.org/wiki/Field-programmable_gate_array)
 2. [FPGA Implementations of Neural Networks](https://link.springer.com/book/10.1007/0-387-28487-7)
+
 4. [BrainWave repo](); [BrainWave on Azure (aml-real-time-ai)](https://github.com/Azure/aml-real-time-ai)
