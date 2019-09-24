@@ -7,3 +7,4 @@ Some reports...
 * Loo.py-基于循环的代码生成转换工具 [slides](Loopy-基于循环的代码生成转换工具.pdf)
 * Cambricon-DNN-Accelerating-ASIC [slides](Cambricon-DNN-Accelerating-ASIC.pdf)
 * The Usage of FPGA for Neural Networks [report](https://github.com/wwqqqqq/Reports/blob/master/The%20Usage%20of%20FPGA%20for%20Neural%20Networks.md)
+* Pedestrians Tracking Methods with Robots [report](Pedestrian_Tracking_on_Robots.md)
